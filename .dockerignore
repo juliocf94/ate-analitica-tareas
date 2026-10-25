@@ -1,0 +1,15 @@
+.git
+.env
+*.env
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+.ipynb_checkpoints/
+data/raw/
+data/processed/
+notebooks/
+reports/
+docs/
+frontend/
+tests/

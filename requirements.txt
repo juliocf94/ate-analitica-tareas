@@ -1,0 +1,1 @@
+# Las dependencias se agregan con versión fijada a medida que entra cada componente.
