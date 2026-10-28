@@ -1,0 +1,11 @@
+archivos,filas_aprox,motor,segundos,memoria_extra_gb,ram_libre_gb,nota
+1,500334,pandas,5.7,0.25,0.7,
+1,500334,dask,4.05,0.14,0.6,
+2,1000668,pandas,9.99,0.44,0.9,
+2,1000668,dask,6.67,0.28,0.6,
+5,2501670,pandas,,,0.6,omitido: memoria insuficiente (0.6 GB libres)
+5,2501670,dask,12.96,0.82,0.6,
+10,5003340,pandas,,,1.1,omitido: memoria insuficiente (1.1 GB libres)
+10,5003340,dask,24.98,1.76,1.1,
+20,10006680,pandas,,,1.4,omitido: memoria insuficiente (1.4 GB libres)
+20,10006680,dask,44.74,1.54,1.4,
