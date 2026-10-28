@@ -1,1 +1,32 @@
-# Las dependencias se agregan con versión fijada a medida que entra cada componente.
+# Python 3.12 (probado en Windows 11). Versiones fijadas para reproducir los resultados.
+# Instalación: pip install -r requirements.txt
+
+# Datos y cómputo paralelo
+numpy==2.5.4
+pandas==3.1.0
+pyarrow==26.0.0
+dask[dataframe]==2026.8.0
+pyspark==4.2.1            # requiere un JDK 17 o 21 (JAVA_HOME)
+psutil==7.2.2
+
+# Almacenamiento
+pymongo==4.19.0
+boto3==1.43.120
+python-dotenv==1.2.4
+
+# Modelado
+scikit-learn==1.9.1
+tensorflow==2.21.0        # incluye keras 3.15
+joblib==1.6.0
+matplotlib==3.11.2
+
+# API
+fastapi==0.162.0
+pydantic==2.14.1
+uvicorn==0.54.0
+
+# Pruebas
+pytest==9.2.0
+mongomock==4.3.0
+moto[s3]==5.2.5
+httpx==0.28.1
