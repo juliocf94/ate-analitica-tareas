@@ -1,0 +1,13 @@
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- Project [id_entrega#2627, numero_estudiante#2628, centro#2629, distrito#2630, grado#2631, modalidad#2632, turno#2633, materia#2634, tipo_tarea#2636, prioridad#2637, dias_plazo_habiles#2639, cruza_asueto#2640, month(cast(fecha_asignacion#2638 as date)) AS mes#2653, dayofweek(cast(fecha_asignacion#2638 as date)) AS dia_semana#2654, hist_n_previas#2645L, hist_tasa_tardia#2648, hist_promedio_nota#2650, tasa_tardia_docente#2652, entrega_tardia#2643]
+   +- BroadcastHashJoin [docente#2635], [docente#1220], LeftOuter, BuildRight, false, false
+      :- Project [id_entrega#2627, numero_estudiante#2628, centro#2629, distrito#2630, grado#2631, modalidad#2632, turno#2633, materia#2634, docente#2635, tipo_tarea#2636, prioridad#2637, fecha_asignacion#2638, dias_plazo_habiles#2639, cruza_asueto#2640, entrega_tardia#2643, hist_n_previas#2645L, hist_tasa_tardia#2648, hist_promedio_nota#2650]
+      :  +- Window [count(_w0#2647) windowspecdefinition(numero_estudiante#2628, dia#2644 ASC NULLS FIRST, specifiedwindowframe(RangeFrame, unboundedpreceding$(), -21)) AS hist_n_previas#2645L, avg(entrega_tardia#2643) windowspecdefinition(numero_estudiante#2628, dia#2644 ASC NULLS FIRST, specifiedwindowframe(RangeFrame, unboundedpreceding$(), -21)) AS hist_tasa_tardia#2648, avg(calificacion#2642) windowspecdefinition(numero_estudiante#2628, dia#2644 ASC NULLS FIRST, specifiedwindowframe(RangeFrame, unboundedpreceding$(), -21)) AS hist_promedio_nota#2650], [numero_estudiante#2628], [dia#2644 ASC NULLS FIRST]
+      :     +- Sort [numero_estudiante#2628 ASC NULLS FIRST, dia#2644 ASC NULLS FIRST], false, 0
+      :        +- Exchange hashpartitioning(numero_estudiante#2628, 16), ENSURE_REQUIREMENTS, [plan_id=6012]
+      :           +- Project [id_entrega#2627, numero_estudiante#2628, centro#2629, distrito#2630, grado#2631, modalidad#2632, turno#2633, materia#2634, docente#2635, tipo_tarea#2636, prioridad#2637, fecha_asignacion#2638, dias_plazo_habiles#2639, cruza_asueto#2640, calificacion#2642, entrega_tardia#2643, datediff(cast(fecha_asignacion#2638 as date), 2026-01-01) AS dia#2644, CASE WHEN NOT (estado#2641 = pendiente) THEN 1 END AS _w0#2647]
+      :              +- Scan ExistingRDD arrow[id_entrega#2627,numero_estudiante#2628,centro#2629,distrito#2630,grado#2631,modalidad#2632,turno#2633,materia#2634,docente#2635,tipo_tarea#2636,prioridad#2637,fecha_asignacion#2638,dias_plazo_habiles#2639,cruza_asueto#2640,estado#2641,calificacion#2642,entrega_tardia#2643]
+      +- BroadcastExchange HashedRelationBroadcastMode(List(input[0, string, true]),false), [plan_id=6017]
+         +- LocalTableScan [docente#1220, tasa_tardia_docente#2652]
+
