@@ -137,6 +137,7 @@ Sprint 2: `GET /health`, `POST /v1/predict` y Swagger en `/docs`, dentro de un c
 | Pruebas pytest con mocks | `tests/` |
 | Evaluación financiera (Hito II) | `src/utils/finanzas.py`, `reports/escenarios_financieros.csv` |
 | Registro de decisiones | [`docs/decisiones.md`](docs/decisiones.md) |
+| Bitácora del Hito II y capturas de S3 y Atlas | `docs/Hito_II_ATE.pdf`, `docs/capturas/` |
 
 ## 8. Limitaciones, riesgos éticos y trabajo futuro
 
@@ -147,7 +148,27 @@ Sprint 2: `GET /health`, `POST /v1/predict` y Swagger en `/docs`, dentro de un c
   Docker usa `spark.read.parquet`.
 - Trabajo futuro: API y contenedor, PWA, recordatorios y prueba de usabilidad con familias.
 
-## 9. Equipo
+## 9. Flujo de trabajo con Git (Gitflow)
+
+| Rama | Uso |
+| --- | --- |
+| `main` | Solo versiones estables y etiquetadas (`v0.2.0` = Hito II, `v1.0.0` = entrega final) |
+| `develop` | Rama de integración: aquí convergen todos los cambios antes de pasar a `main` |
+| `feature/HU-xx-nombre` | Una rama por historia de usuario; sale de `develop` y vuelve por *pull request* revisado |
+| `release/vX.Y.Z` | Preparación de una versión: solo correcciones, luego se fusiona en `main` y `develop` |
+| `hotfix/nombre` | Corrección urgente sobre `main` |
+
+Ramas abiertas para el Sprint 2: `feature/HU-12-api-docker` (Mauricio Castro: API y Docker) y
+`feature/HU-14-readme-calidad` (Claudia Carballo: README final y pruebas de la API).
+
+```bash
+git checkout develop && git pull
+git checkout feature/HU-12-api-docker          # o la rama propia
+# ... cambios y commits ...
+git push -u origin feature/HU-12-api-docker    # y abrir un pull request hacia develop
+```
+
+## 10. Equipo
 
 | Integrante | Rol |
 | --- | --- |
@@ -155,6 +176,12 @@ Sprint 2: `GET /health`, `POST /v1/predict` y Swagger en `/docs`, dentro de un c
 | Mauricio Enrique Castro Flores | Product Owner · Producto y MLOps |
 | Claudia Patricia Carballo Larios | Scrum Master · Calidad y documentación |
 
-## 10. Licencia
+## 11. Licencia
 
 [MIT](LICENSE).
+
+## 12. Uso de inteligencia artificial
+
+El equipo usó Claude (Anthropic, modelo Opus 5.5) como asistente para escribir y revisar código y
+pruebas, depurar PySpark y redactar la documentación. Las decisiones y la revisión de resultados son
+del equipo, y cada integrante puede explicar y modificar cualquier parte del proyecto.
