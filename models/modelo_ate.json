@@ -1,0 +1,47 @@
+{
+  "modelo": "regresion_logistica",
+  "umbral": 0.5,
+  "version": "0.2.0",
+  "entrenado": "2026-11-02",
+  "categoricas": [
+    "distrito",
+    "grado",
+    "modalidad",
+    "turno",
+    "materia",
+    "tipo_tarea",
+    "prioridad"
+  ],
+  "numericas": [
+    "dias_plazo_habiles",
+    "cruza_asueto",
+    "mes",
+    "dia_semana",
+    "hist_n_previas",
+    "hist_tasa_tardia",
+    "hist_promedio_nota",
+    "tasa_tardia_docente"
+  ],
+  "metricas_prueba": {
+    "f1": 0.4805,
+    "precision": 0.4025,
+    "exhaustividad": 0.596,
+    "auc_roc": 0.7071,
+    "auc_pr": 0.4584,
+    "exactitud": 0.6737,
+    "segundos_entreno": 20.7,
+    "cv_f1": 0.4977
+  },
+  "matriz_confusion": [
+    [
+      37520,
+      16076
+    ],
+    [
+      7341,
+      10828
+    ]
+  ],
+  "filas_entreno": 286683,
+  "filas_prueba": 71765
+}
