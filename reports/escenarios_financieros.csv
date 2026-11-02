@@ -1,0 +1,7 @@
+escenario,horizonte,ingresos,egresos,beneficio_neto,roi,van,mes_recuperacion
+pesimista,12_meses,8800.0,14179.0,-5379.0,-1.003,-5416.26,
+pesimista,24_meses,35400.0,31871.5,3528.5,0.658,2171.21,19.0
+base,12_meses,17600.0,17646.4,-46.4,-0.009,-422.22,
+base,24_meses,70600.0,45753.7,24846.3,4.631,20829.88,14.0
+optimista,12_meses,22000.0,19382.2,2617.8,0.488,2075.95,9.0
+optimista,24_meses,88400.0,52775.8,35624.2,6.64,30264.44,9.0
