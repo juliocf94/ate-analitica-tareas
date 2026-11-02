@@ -88,3 +88,12 @@ Fecha: 2026-10-28 · Estado: aceptada
 - **Contexto:** los datos son tabulares; no hay imágenes, texto ni secuencias largas que justifiquen una CNN o una LSTM.
 - **Decisión:** MLP de dos capas ocultas (64 y 32) con dropout 0,3, `EarlyStopping` sobre la pérdida de validación y pesos de clase balanceados, con el mismo preprocesador de los modelos clásicos.
 - **Consecuencias:** la API sirve el mejor modelo de scikit-learn para no meter TensorFlow en la imagen Docker; el MLP queda en `models/` y en la comparación.
+
+## Decisión 011: Gitflow para el trabajo en equipo
+
+Fecha: 2026-11-02 · Estado: aceptada
+
+- **Contexto:** hasta el Hito II el repositorio tuvo un solo autor y las ramas se integraban directo en `main`; la guía exige ramas, *pull requests* y un reparto equilibrado de commits.
+- **Alternativas:** A) GitHub Flow (solo `main` y ramas cortas). B) Gitflow (`main`, `develop`, `feature/*`, `release/*`, `hotfix/*`).
+- **Decisión:** B. `develop` concentra el trabajo de los tres integrantes y `main` solo recibe versiones etiquetadas, que es lo que se evalúa (`v1.0.0`).
+- **Consecuencias:** cada integrante trabaja en su rama `feature/HU-xx` y abre un *pull request* hacia `develop`; la versión final sale por una rama `release/v1.0.0`.
