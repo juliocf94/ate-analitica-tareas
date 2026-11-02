@@ -158,15 +158,24 @@ Sprint 2: `GET /health`, `POST /v1/predict` y Swagger en `/docs`, dentro de un c
 | `release/vX.Y.Z` | Preparación de una versión: solo correcciones, luego se fusiona en `main` y `develop` |
 | `hotfix/nombre` | Corrección urgente sobre `main` |
 
-Ramas abiertas para el Sprint 2: `feature/HU-12-api-docker` (Mauricio Castro: API y Docker) y
-`feature/HU-14-readme-calidad` (Claudia Carballo: README final y pruebas de la API).
+Ramas personales para el Sprint 2 (cada una sale de `develop` y vuelve por *pull request*):
+
+| Rama | Responsable | Trabajo |
+| --- | --- | --- |
+| `feature/mauricio-api-docker` | Mauricio Castro | API FastAPI (`/health`, `/v1/predict`), Dockerfile y PWA |
+| `feature/claudia-readme-calidad` | Claudia Carballo | README final, pruebas de la API y revisión de *pull requests* |
+
+Para empezar a trabajar (ejemplo con la rama de Mauricio):
 
 ```bash
-git checkout develop && git pull
-git checkout feature/HU-12-api-docker          # o la rama propia
+git clone https://github.com/juliocf94/ate-analitica-tareas.git && cd ate-analitica-tareas
+git checkout feature/mauricio-api-docker
+git config user.name "Nombre Apellido" && git config user.email "correo@ejemplo.com"
 # ... cambios y commits ...
-git push -u origin feature/HU-12-api-docker    # y abrir un pull request hacia develop
+git push                                        # y abrir un pull request hacia develop
 ```
+
+Antes de cada sesión conviene traer lo último de `develop`: `git pull origin develop`.
 
 ## 10. Equipo
 
