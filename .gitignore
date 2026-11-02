@@ -10,6 +10,12 @@ data/processed/*
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 
+# CSV: no se versionan (requisito del Taller de Calidad), salvo la muestra mínima
+# de las pruebas y las tablas pequeñas de resultados
+*.csv
+!data/muestra/*.csv
+!reports/*.csv
+
 # Python
 __pycache__/
 *.py[cod]
