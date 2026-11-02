@@ -1,0 +1,3 @@
+caso,etapa,subetapa,docs_examinados,devueltos,ms
+sin_indice,COLLSCAN,,50000,79,390
+con_indice,FETCH,IXSCAN,79,79,1

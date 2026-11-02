@@ -21,7 +21,7 @@ escolar salvadoreño (asuetos, vacaciones y modalidades nocturna, de fin de sema
 | Datos | 10 millones de entregas sintéticas reproducibles (`src/ingesta/generador.py`) |
 | Dask | Limpia y agrega los 10 M de filas en 45 s; Pandas no cabe en la RAM libre desde 2,5 M |
 | PySpark | Historial previo de cada estudiante con ventanas y un *join* con *broadcast* |
-| MongoDB | Validación Pydantic, 3 índices y consultas con `$gt`/`$lt` |
+| MongoDB | 50 000 tareas en Atlas con validación Pydantic y 3 índices; la consulta principal pasa de 390 ms (`COLLSCAN`, 50 000 documentos) a 1 ms (`IXSCAN`, 79 documentos) |
 | S3 | Subida y descarga con `boto3`, errores 403 y 404 controlados |
 | Modelos | F1 de 0,48 frente a 0,25 del baseline; AUC ROC 0,71 |
 | Finanzas | ROI de 4,6 veces a 24 meses y recuperación en el mes 14 (escenario base) |
