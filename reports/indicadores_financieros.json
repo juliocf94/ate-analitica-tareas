@@ -1,0 +1,107 @@
+{
+  "supuestos": {
+    "precio_alumno_mes": 0.5,
+    "alumnos_por_centro": 400,
+    "meses_lectivos": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "centros_por_mes": [
+      2,
+      2,
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32
+    ],
+    "inversion_inicial": {
+      "desarrollo (3 personas x 160 h x 10 USD/h)": 4800.0,
+      "revisión legal del aviso de privacidad (Decreto 144)": 300.0,
+      "teléfonos de prueba (gama baja y Huawei)": 250.0,
+      "dominio (primer año)": 15.0
+    },
+    "costos_nube": [
+      [
+        1,
+        {
+          "MongoDB Atlas Flex": 30.0,
+          "Render Starter (API)": 7.0,
+          "Vercel Pro": 20.0,
+          "AWS S3": 2.0
+        }
+      ],
+      [
+        7,
+        {
+          "MongoDB Atlas M10": 57.0,
+          "Render Starter (API)": 7.0,
+          "Vercel Pro": 20.0,
+          "AWS S3": 3.0
+        }
+      ],
+      [
+        13,
+        {
+          "MongoDB Atlas M10": 57.0,
+          "Render Standard (API)": 25.0,
+          "Vercel Pro": 20.0,
+          "AWS S3": 5.0
+        }
+      ]
+    ],
+    "soporte_mensual": 500.0,
+    "fijos_mensuales": {
+      "contabilidad": 100.0,
+      "mercadeo": 150.0
+    },
+    "isr": 0.3,
+    "comision_ventas": 0.1,
+    "pasarela_pago": 0.035,
+    "tasa_descuento_anual": 0.12,
+    "mes_inicio": 1
+  },
+  "indicadores": {
+    "12_meses": {
+      "ingresos": 17600.0,
+      "egresos": 17646.4,
+      "beneficio_neto": -46.4,
+      "roi": -0.009,
+      "van": -422.22,
+      "mes_recuperacion": null
+    },
+    "24_meses": {
+      "ingresos": 70600.0,
+      "egresos": 45753.7,
+      "beneficio_neto": 24846.3,
+      "roi": 4.631,
+      "van": 20829.88,
+      "mes_recuperacion": 14
+    }
+  }
+}
