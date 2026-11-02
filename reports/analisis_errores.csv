@@ -1,0 +1,12 @@
+grupo,valor,n,tasa_real,f1,precision,exhaustividad,auc_roc,auc_pr,exactitud
+modalidad,a_distancia,2807,0.331,0.543,0.425,0.753,0.697,0.56,0.581
+modalidad,fin_de_semana,5830,0.262,0.512,0.408,0.686,0.719,0.465,0.657
+modalidad,nocturna,6677,0.259,0.499,0.392,0.684,0.707,0.44,0.644
+modalidad,regular,56451,0.248,0.469,0.401,0.565,0.705,0.449,0.684
+sin_historial,False,65480,0.254,0.493,0.416,0.606,0.717,0.469,0.683
+sin_historial,True,6285,0.242,0.354,0.279,0.482,0.563,0.286,0.575
+tipo_tarea,guía,14478,0.215,0.44,0.408,0.477,0.719,0.43,0.739
+tipo_tarea,investigación,10756,0.246,0.468,0.388,0.587,0.697,0.428,0.671
+tipo_tarea,laboratorio,7028,0.234,0.453,0.406,0.513,0.7,0.424,0.711
+tipo_tarea,proyecto,10455,0.284,0.508,0.401,0.692,0.697,0.49,0.62
+tipo_tarea,tarea,29048,0.269,0.493,0.406,0.627,0.704,0.475,0.652
