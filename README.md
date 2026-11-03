@@ -84,7 +84,7 @@ funciona, no cómo se comportan los estudiantes salvadoreños.
 Requiere Python 3.12 y, para PySpark, un JDK 17 o 21.
 
 ```bash
-git clone <url-del-repositorio> && cd ate-analitica-tareas
+git clone https://github.com/juliocf94/ate-analitica-tareas.git && cd ate-analitica-tareas
 python -m venv .venv && .venv\Scripts\activate      # en Linux o macOS: source .venv/bin/activate
 pip install -r requirements.txt
 pytest                                              # pruebas, sin red
