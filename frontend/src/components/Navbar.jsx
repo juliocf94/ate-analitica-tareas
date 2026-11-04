@@ -1,84 +1,58 @@
 
-import { NavLink } from "react-router-dom";
-import {
-  LayoutDashboard,
-  ClipboardList,
-  FileCheck,
-  BellRing,
-  GraduationCap,
-  BookOpen
-} from "lucide-react";
+import { Bell, Search } from "lucide-react";
+import { useLocation } from "react-router-dom";
 
-const menuItems = [
-  {
+const pageInfo = {
+  "/": {
     title: "Dashboard",
-    path: "/",
-    icon: LayoutDashboard
+    description: "Resumen general del seguimiento académico"
   },
-  {
+  "/tasks": {
     title: "Tareas",
-    path: "/tasks",
-    icon: ClipboardList
+    description: "Consulta y seguimiento de tareas escolares"
   },
-  {
+  "/deliveries": {
     title: "Entregas",
-    path: "/deliveries",
-    icon: FileCheck
+    description: "Registro y seguimiento de entregas"
   },
-  {
+  "/alerts": {
     title: "Alertas de riesgo",
-    path: "/alerts",
-    icon: BellRing
+    description: "Identificación temprana de posibles retrasos"
   }
-];
+};
 
-function Sidebar() {
+function Navbar() {
+  const location = useLocation();
+  const currentPage = pageInfo[location.pathname] || pageInfo["/"];
+
   return (
-    <aside className="sidebar">
-      <div className="sidebar-brand">
-        <div className="brand-icon">
-          <GraduationCap size={27} />
-        </div>
-
-        <div>
-          <h2>ATE</h2>
-          <span>Analítica Educativa</span>
-        </div>
+    <header className="navbar">
+      <div className="navbar-title">
+        <h1>{currentPage.title}</h1>
+        <p>{currentPage.description}</p>
       </div>
 
-      <div className="sidebar-section">
-        <span className="menu-label">MENÚ PRINCIPAL</span>
+      <div className="navbar-actions">
+        <button className="icon-button" aria-label="Buscar">
+          <Search size={20} />
+        </button>
 
-        <nav className="sidebar-nav">
-          {menuItems.map((item) => {
-            const Icon = item.icon;
+        <button className="icon-button notification-button"
+          aria-label="Notificaciones">
+          <Bell size={20} />
+          <span className="notification-dot"></span>
+        </button>
 
-            return (
-              <NavLink
-                key={item.path}
-                to={item.path}
-                end={item.path === "/"}
-                className={({ isActive }) =>
-                  isActive ? "nav-item active" : "nav-item"
-                }
-              >
-                <Icon size={20} />
-                <span>{item.title}</span>
-              </NavLink>
-            );
-          })}
-        </nav>
-      </div>
-
-      <div className="sidebar-footer">
-        <BookOpen size={19} />
-        <div>
-          <strong>ATE Educativo</strong>
-          <span>Plataforma de seguimiento</span>
+        <div className="user-profile">
+          <div className="user-avatar">AF</div>
+          <div className="user-info">
+            <strong>Administrador</strong>
+            <span>Usuario ATE</span>
+          </div>
         </div>
       </div>
-    </aside>
+    </header>
   );
 }
 
-export default Sidebar;
+export default Navbar;
